@@ -21,7 +21,7 @@
 |post|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|block|integer|null: false|
+|block|string|null: false|
 |building|string||
 |phone|integer||
 ### Association
@@ -36,15 +36,16 @@
 |brand|string||
 |explanation|text|null: false|
 |status|string|null: false|
+|sell_or_sold|string|null: false|
 |delivery_fee|integer|null: false|
 |delivery_area|string|null: false|
-|delivery_day|integer|null: false|
+|delivery_day|string|null: false|
 |price|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
+|image_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :categorie
+- belongs_to :category
 - belongs_to :image
 
 
@@ -71,6 +72,7 @@
 |------|----|-------|
 |name|string|null: false|
 |ancestry|integer|null: false|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :products
 
