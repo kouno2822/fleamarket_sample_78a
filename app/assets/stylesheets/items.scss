@@ -1,3 +1,60 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  margin: 0px;
+}
+.header {
+  height: 100px;
+  padding: 0px 200px;
+  &__top {
+    margin-top: 15px;
+    &__tag {
+      height: 40px;
+      width: 140px
+    }
+    &__searchBox {
+    float: right;
+    width: 70%;
+    height: 36px;
+      &__input-text {
+        height: 40px;
+        font-size: large;
+      }
+    }
+    &__button {
+      float: right;
+      &__search-butto {
+        width: 36px;
+      }
+    }
+  }
+}
+
+
+
+// .input-text {
+//   font-size: 16px;
+//   height: 50px;
+//   width: 100%;
+//   padding: 0 15px;
+//   color: #434a54;
+//   border-style: none;
+// }
+
+// .submit-btn {
+//   width: 100px;
+//   height: 50px;
+//   padding: 0 30px;
+//   margin-left: 15px;
+//   background-color: #eeeeee;
+//   font-size: 15px;
+//   cursor: pointer;
+//   color: #1a1d21;
+// }
+
+main {
+  height: 300px;
+}
+footer {
+  height: 100px;
+}
+
+// background-image:url("/top.jpg");
