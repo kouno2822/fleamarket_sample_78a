@@ -44,7 +44,8 @@
 |category_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :category
+- has_many :categories, through :items_categories
+- has_many :items_categories
 - has_many :image
 
 
@@ -63,7 +64,19 @@
 |name|string|null: false|
 |ancestry|integer|null: false|
 ### Association
-- has_many :items
+- has_many :item, through :items_categories
+- has_many :items_categories
+
+
+
+## items_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :item
+- belongs_to :category
 
 
 ## cardsテーブル
