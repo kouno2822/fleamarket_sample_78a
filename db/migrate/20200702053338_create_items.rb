@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.text :explanation
       t.string :status, null: false
       t.string :sell_or_sold, null: false
-      t.integer :delivery_fee, null: false
+      t.string :delivery_burden, null: false
       t.string :delivery_area, null: false
       t.string :delivery_day, null: false
       t.integer :price, null: false

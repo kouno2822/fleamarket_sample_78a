@@ -36,7 +36,7 @@
 |explanation|text|null: false|
 |status|string|null: false|
 |sell_or_sold|string|null: false|
-|delivery_fee|integer|null: false|
+|delivery_burden|string|null: false|
 |delivery_area|string|null: false|
 |delivery_day|string|null: false|
 |price|integer|null: false|
