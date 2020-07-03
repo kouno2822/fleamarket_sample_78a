@@ -36,7 +36,7 @@
 |explanation|text|null: false|
 |status|string|null: false|
 |sell_or_sold|string|null: false|
-|delivery_fee|integer|null: false|
+|delivery_burden|integer|null: false|
 |delivery_area|string|null: false|
 |delivery_day|string|null: false|
 |price|integer|null: false|
@@ -64,7 +64,7 @@
 |name|string|null: false|
 |ancestry|integer|null: false|
 ### Association
-- has_many :item, through :items_categories
+- has_many :items, through :items_categories
 - has_many :items_categories
 
 
