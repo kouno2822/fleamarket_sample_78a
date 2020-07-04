@@ -1,0 +1,169 @@
+.selling-header {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__logo {
+    }
+  }
+}
+
+.selling-body {
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+
+  &__form {
+    padding: 30Px;
+    background-color: white;
+
+    &__field {
+      color: #444444;
+      margin: 10px;
+
+      .character {
+        font-size: small;
+        font-weight: bold;
+        margin: 30px 0 15px;
+      }
+
+      .must {
+        height: 16px;
+        width: 30px;
+        margin: 2px 2px 2px 10px;
+        font-size: 11px;
+        font-weight: bold;
+        background-color: #FF0461;
+        border-radius: 3px;
+        color: white;
+        display: inline-block;
+        text-align: center;
+      }
+
+      #item_name {
+        height: 40px;
+        width: 570px;
+        font-size: medium;
+        padding: 0 15px;
+      }
+      #item_explanation {
+        height: 150px;
+        width: 570px;
+        font-size: large;
+        padding: 10px 15px;
+      }
+      #parent_category {
+        height: 40px;
+        width: 610px;
+        font-size: medium;
+        padding: 0 10px;
+      }
+      #item_brand {
+        height: 40px;
+        width: 570px;
+        font-size: medium;
+        padding: 0 15px;
+      }
+      #item_status {
+        height: 40px;
+        width: 610px;
+        font-size: medium;
+        padding: 0 10px;
+      }
+      #item_delivery_burden {
+        height: 40px;
+        width: 610px;
+        font-size: medium;
+        padding: 0 10px;
+      }
+      #item_prefecture_id {
+        height: 40px;
+        width: 610px;
+        font-size: medium;
+        padding: 0 10px;
+      }
+      #item_delivery_day {
+        height: 40px;
+        width: 610px;
+        font-size: medium;
+        padding: 0 10px;
+      }
+
+    }
+    .h-character {
+      font-size: small;
+      font-weight: bold;
+      color: #777777;
+      margin: 90px 0 2px;
+    }
+    &__field--sale {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 10px;
+
+      .sale-character {
+        font-size: small;
+
+        .character {
+          font-size: small;
+          font-weight: bold;
+          margin: 20px 0 15px;
+        }
+        .must {
+          height: 16px;
+          width: 30px;
+          margin: 2px 2px 2px 10px;
+          font-size: 11px;
+          font-weight: bold;
+          background-color: #FF0461;
+          border-radius: 3px;
+          color: white;
+          display: inline-block;
+          text-align: center;
+        }
+      }
+      .sale-value {
+        font-size: small;
+        display: flex;
+        align-items: center;
+        
+        #item_price {
+          height: 45px;
+          width: 260px;
+          font-size: medium;
+          padding: 0 10px;
+          text-align: right;
+        }
+      }
+    }
+    &__btn-area {
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .submit-btn {
+        height: 50px;
+        width: 300px;
+        background-color: #33CCCC;
+        color: white;
+        font-weight: bold;
+        font-size: medium;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.selling-footer {
+  height: 120px;
+  background-color: #EEEEEE;
+}
