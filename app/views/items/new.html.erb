@@ -13,9 +13,11 @@
         <div class="character">
           出品画像<span class="must">必須</span>
         </div>
-        <%= f.fields_for :images do |i| %>
-          <%= i.file_field :image %><br>
-        <% end %>
+        <div class="selling-body__form__field__image">
+          <%= f.fields_for :images do |i| %>
+            <%= i.file_field :image, class: "image-file" %><br>
+          <% end %>
+        </div>
       </div>
 
       <div class="selling-body__form__field">
@@ -40,7 +42,9 @@
         <div class="character">
           カテゴリー<span class="must">必須</span>
         </div>
-        <%= f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {id: 'parent_category'} %><br>
+        <div class="selling-body__form__field__category">
+          <%= f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {id: 'parent_category'} %>
+        </div>
       </div>
 
       <div class="selling-body__form__field">
@@ -102,7 +106,7 @@
         <div class="sale-character">
           販売手数料（10%）
         </div>
-        <div class="sale-value">
+        <div class="sale-fee">
           ---
         </div>
       </div>
@@ -111,7 +115,7 @@
         <div class="sale-character">
           販売利益
         </div>
-        <div class="sale-value">
+        <div class="sale-profit">
           ---
         </div>
       </div>
