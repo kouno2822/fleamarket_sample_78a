@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_03_020630) do
+ActiveRecord::Schema.define(version: 2020_07_06_014942) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2020_07_03_020630) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "item_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_item_categories_on_category_id"
+    t.index ["item_id"], name: "index_item_categories_on_item_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "brand"
@@ -34,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_07_03_020630) do
     t.string "status", null: false
     t.string "sell_or_sold", null: false
     t.string "delivery_burden", null: false
-    t.string "delivery_area", null: false
+    t.integer "prefecture_id", null: false
     t.string "delivery_day", null: false
     t.integer "price", null: false
     t.integer "user_id", null: false
@@ -71,4 +80,6 @@ ActiveRecord::Schema.define(version: 2020_07_03_020630) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "item_categories", "categories"
+  add_foreign_key "item_categories", "items"
 end
