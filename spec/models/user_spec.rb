@@ -39,7 +39,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'パスワードが7文字以上ない場合、無効である' do
-    user = build(:user, password: '1111')
+    user = build(:user, password: '111111')
     user.valid?
     expect(user.errors[:password]).to include('は7文字以上で入力してください')
   end
