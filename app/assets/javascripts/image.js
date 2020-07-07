@@ -4,8 +4,8 @@ $(function(){
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="image-file_group">
                     <input class="image-file" type="file"
-                    name="product[images_attributes][${index}][image]"
-                    id="product_images_attributes_${index}_image"><br>
+                    name="item[images_attributes][${index}][image]"
+                    id="item_images_attributes_${index}_image"><br>
                     <div class="image-remove">削除</div>
                   </div>`;
     return html;

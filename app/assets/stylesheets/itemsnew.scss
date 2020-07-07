@@ -23,6 +23,10 @@
     padding: 30Px;
     background-color: white;
 
+    #error_explanation {
+      color: #FF0461;
+    }
+
     &__field {
       color: #444444;
       margin: 10px;

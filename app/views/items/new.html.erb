@@ -7,7 +7,8 @@
 </div>
 <div class="selling-body">
   <div class="selling-body__form">
-    <%= form_with model: @item do |f| %>
+    <%= form_with model: @item, local: true do |f| %>
+      <%= render partial: "error_messages" %>
 
       <div class="selling-body__form__field">
         <div class="character">
