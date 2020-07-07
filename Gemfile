@@ -38,11 +38,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
-<<<<<<< HEAD
-  gem 'rspec-rails', '~>4.0.0.beta2'
-=======
   gem 'rspec-rails', '~> 4.0.0.beta2'
->>>>>>> 99d1f14... unit test and error handling finished
   gem 'factory_bot_rails'
 end
 
@@ -88,3 +84,6 @@ gem 'font-awesome-sass'
 gem 'active_hash', '~> 2.3.0'
 gem 'ancestry'
 gem 'rails-i18n'
+gem 'rails-i18n'
+gem 'haml-rails'
+gem 'erb2haml'

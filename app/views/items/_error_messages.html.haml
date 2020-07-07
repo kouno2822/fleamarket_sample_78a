@@ -1,0 +1,7 @@
+- if @item.errors.any?
+  #error_explanation
+    %h2
+      必須項目を入力してください
+    %ul
+      - @item.errors.full_messages.each do |message|
+        %li= message
