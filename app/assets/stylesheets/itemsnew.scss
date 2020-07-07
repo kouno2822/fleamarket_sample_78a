@@ -8,9 +8,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &__logo {
-    }
   }
 }
 
@@ -71,14 +68,14 @@
 
       #item_name {
         height: 40px;
-        width: 570px;
+        width: 610px;
         font-size: medium;
         padding: 0 15px;
       }
       #item_explanation {
         height: 150px;
-        width: 570px;
-        font-size: large;
+        width: 610px;
+        font-size: medium;
         padding: 10px 15px;
       }
       #parent_category {
@@ -89,7 +86,7 @@
       }
       #item_brand {
         height: 40px;
-        width: 570px;
+        width: 610px;
         font-size: medium;
         padding: 0 15px;
       }
