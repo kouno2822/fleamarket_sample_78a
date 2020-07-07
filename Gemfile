@@ -71,3 +71,5 @@ gem 'jquery-rails'
 gem 'fog-aws'
 gem 'rubocop', require: false
 # gem 'font-awesome-sass'
+gem 'haml-rails'
+gem 'erb2haml'
