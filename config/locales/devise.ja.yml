@@ -39,6 +39,7 @@ ja:
         prefecture: 都道府県
         city: 市区町村
         block: 番地
+        phone: 電話番号
     models:
       user: ユーザ
   devise:

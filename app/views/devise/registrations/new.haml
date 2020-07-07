@@ -57,9 +57,9 @@
     %br/
     = f.text_field :send_first_name_furi,placeholder: '例）タロウ'
   .field
-    = f.label :郵便番号
+    = f.label :郵便番号（半角数字、ハイフンなし）
     %br/
-    = f.text_field :post,placeholder: '例）000-1111'
+    = f.text_field :post,placeholder: '例）0001111'
   .field
     = f.label :都道府県
     %br/
@@ -77,9 +77,9 @@
     %br/
     = f.text_field :building,placeholder: '例）アパート栄 301'
   .field
-    = f.label :送付先：電話番号
+    = f.label :送付先：電話番号（半角数字、ハイフンなし）
     %br/
-    = f.text_field :phone,placeholder: '例）090-0××1-1××0'
+    = f.text_field :phone,placeholder: '例）09011110000'
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
