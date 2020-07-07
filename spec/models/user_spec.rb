@@ -128,6 +128,18 @@ RSpec.describe User, type: :model do
     expect(user.errors[:send_first_name_furi]).to include('を入力してください')
   end
 
+  it '郵便番号に全角数字や文字が入っている場合、無効である' do
+    user = build(:user, post: '468000あ')
+    user.valid?
+    expect(user.errors[:post]).to include('は不正な値です')
+  end
+
+  it '郵便番号が7桁以外の場合、無効である' do
+    user = build(:user, post: '48411110')
+    user.valid?
+    expect(user.errors[:post]).to include('は不正な値です')
+  end
+
   it '郵便番号がない場合、無効である' do
     user = build(:user, post: '')
     user.valid?
@@ -150,6 +162,18 @@ RSpec.describe User, type: :model do
     user = build(:user, block: '')
     user.valid?
     expect(user.errors[:block]).to include('を入力してください')
+  end
+
+  it '電話番号に全角数字や文字が入っている場合、無効である' do
+    user = build(:user, phone: '090486０００あ')
+    user.valid?
+    expect(user.errors[:phone]).to include('は不正な値です')
+  end
+
+  it '電話番号に10桁や11桁以外の文字数が入っている場合、無効である' do
+    user = build(:user, phone: '090486000')
+    user.valid?
+    expect(user.errors[:phone]).to include('は不正な値です')
   end
 
 end

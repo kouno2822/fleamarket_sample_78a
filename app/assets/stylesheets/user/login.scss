@@ -1,0 +1,32 @@
+$back_ground_color: rgb(240, 240, 240);
+
+.Login{
+  background: $back_ground_color;
+  &__top{
+    height: 128px;
+    &-image{
+      width: 120px;
+      height: 33px;
+      margin : 10px auto;
+    }
+  }
+  &__main{
+    display: flex;
+    &__left{
+      width: 35%; 
+      min-width: 0;
+    }
+    &__center{
+      background-color: #fff;
+      max-width: none;
+      width: 500px;
+    }
+    &__right{
+      width: 35%;
+      min-width: 0;
+    }
+  }
+  &__buttom{
+    height: 200px;
+  }
+}
