@@ -14,10 +14,11 @@ FactoryBot.define do
     send_first_name       {"太郎"}
     send_last_name_furi   {"ヤマダ"}
     send_first_name_furi  {"タロウ"}
-    post                  {"000-1111"}
+    post                  {"0011111"}
     prefecture            {"愛知県"}
     city                  {"名古屋市中区"}
     block                 {"栄3-10"}
+    phone                 {"09054553140"}
   end
 
 end
