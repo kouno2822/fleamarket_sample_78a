@@ -1,0 +1,298 @@
+$back_ground_color: rgb(240, 240, 240);
+@mixin form{
+  border: solid 1px rgb(170, 170, 170);
+  border-radius: 4px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 5px;
+  height: 50px;
+  padding-left: 10px;
+  display: block;
+}
+@mixin form_text{
+  margin-left: 130px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.span{
+  background: #ea352d;
+  color: #fff;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+.Signup{
+  background: $back_ground_color;
+  margin-top: 0;
+  &__top{
+    height: 128px;
+    &-image{
+      width: 200px;
+      height: 50px;
+      margin: 0 auto;
+      padding-top: 40px;
+      padding-bottom: 10px;
+      &-image{
+        width: 200px;
+        height: 50px;
+      }
+    }
+  }
+  &__main{
+    display: flex;
+    &__left{
+      width: 35%; 
+      min-width: 0;
+    }
+    &__center{
+      background-color: #fff;
+      max-width: none;
+      width: 800px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      &__login{
+        border-bottom: solid 1px $back_ground_color;
+        padding-bottom: 40px;
+        margin-bottom: 10px;
+        text-align: center;
+        &-text{
+          text-align: center;
+        }
+        &-btn{
+          text-align: center;
+          display: block;
+          text-decoration: none;
+          border-radius: 4px;
+          border: solid 1px #0099e8;
+          background-color: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          width: 300px;
+          height: 50px;
+          line-height: 50px;
+          margin: 0 auto;
+        }
+      }
+      &__text{
+        text-align: center;
+        border-bottom: solid 1px $back_ground_color;
+        margin-bottom: 30px;
+        height: 120px;
+        font-size: 26px;
+        line-height: 110px;
+      }
+      &__form{
+        &-nickname{
+          &-text{
+            margin-top: 20px;
+            margin-left: 130px;
+            font-size: 14px;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-email{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-pass{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-pass_confirm{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-last_name{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-first_name{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-last_name_furi{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-first_name_furi{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-birth{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+          }
+        }
+        &-send_last_name{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-send_first_name{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-send_last_name_furi{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-send_first_name_furi{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-post{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-prefecture{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-city{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-block{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-building{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-phone{
+          &-text{
+            @include form_text;
+          }
+          &-form{
+            @include form;
+          }
+        }
+        &-btn{
+          text-align: center;
+          display: block;
+          text-decoration: none;
+          border-radius: 4px;
+          border: solid 1px #0099e8;
+          background-color: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          width: 300px;
+          height: 50px;
+          line-height: 50px;
+          margin: 0 auto;
+          margin-top: 50px;
+        }
+      }
+    }
+    &__right{
+      width: 35%;
+      min-width: 0;
+    }
+  }
+  &__buttom{
+    height: 200px;
+  }
+}
+.year{
+  border: solid 1px rgb(170, 170, 170);
+  border-radius: 4px;
+  width: 15%;
+  margin-top: 5px;
+  height: 50px;
+  padding-left: 10px;
+  margin-left: 125px;
+}
+.month{
+  border: solid 1px rgb(170, 170, 170);
+  border-radius: 4px;
+  width: 15%;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 50px;
+  padding-left: 10px;
+}
+.day{
+  border: solid 1px rgb(170, 170, 170);
+  border-radius: 4px;
+  width: 15%;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 50px;
+  padding-left: 10px;
+}
+.devise_errors{
+  margin-top: 10px;
+}
+#error_explanation{
+  margin-left: 125px;
+}

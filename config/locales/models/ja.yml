@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      item: 商品
+    attributes:
+      item:
+        name: 商品名
+        brand: ブランド
+        explanation: 商品の説明
+        status: 商品の状態
+        sell_or_sold: 出品中かSold
+        delivery_burden: 配送料の負担
+        prefecture_id: 発送元の地域
+        delivery_day: 発送までの日数
+        price: 販売価格
+        category_id: カテゴリー
+    # models:
+    #   image: 出品画像
+    # attributes:
+    #   image:
+    #     image: 出品画像

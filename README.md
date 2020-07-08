@@ -36,16 +36,17 @@
 |explanation|text|null: false|
 |status|string|null: false|
 |sell_or_sold|string|null: false|
-|delivery_fee|integer|null: false|
-|delivery_area|string|null: false|
+|delivery_burden|string|null: false|
+|prefecture_id|integer|null: false|
 |delivery_day|string|null: false|
 |price|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :category
-- has_many :image
+- has_many :item_categories
+- has_many :categories, through :item_categories
+- has_many :images
 
 
 ## imagesテーブル
@@ -63,7 +64,20 @@
 |name|string|null: false|
 |ancestry|integer|null: false|
 ### Association
-- has_many :items
+- has_many :item_categories
+- has_many :items, through :item_categories
+- has_ancestry
+
+
+
+## item_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer|index: true, null: false, foreign_key: true|
+|category_id|integer|index: true, null: false, foreign_key: true|
+### Association
+- belongs_to :item
+- belongs_to :category
 
 
 ## cardsテーブル
