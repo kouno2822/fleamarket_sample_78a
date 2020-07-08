@@ -10,6 +10,6 @@
     = link_to "プロフィール編集", '#', class:"Main__left__config_user"
     = link_to "クレジット登録", users_credit_path, class:"Main__left__config_credit"
     = link_to "ログアウト", users_logout_path, class: "Main__left__config_logout"
-  .Main__right_logout
-    = link_to "ログアウト", destroy_user_session_path,method: :delete, class: "Main__right_logout-btn"
+  .Main__right_credit
+    = link_to "クレジットカード情報を登録する", '#', class: 'Main__right_credit-btn'
 = render partial: '/items/footer' 

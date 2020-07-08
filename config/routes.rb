@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   } 
   get 'users/show', to: 'users#show'
   get 'users/logout', to: 'users#logout'
+  get 'users/credit', to: 'users#credit'
   resources :items do
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
