@@ -1,0 +1,17 @@
+.header
+  .header__top
+    .header__top__main
+      %a{ href: root_path}
+        .header__top__main__tag
+          = image_tag 'logo.png', class: 'header__top__main__tag'
+      %form.header__top__main__searchBox
+        %input.header__top__main__searchBox__input-text{ placeholder: "キーワードから探す", :type => "text"}/
+        %button.header__top__main__searchBox__button{ type: "submit"}
+          .header__top__main__searchBox__button__search
+            = image_tag 'icon-search 1.png', class: 'header__top__main__searchBox__button__search'
+    .header__top__navi
+      %ul.header__top__navi__listsLeft
+        %a#catBtn.header__top__navi__listsLeft__categori{ href: "#"} カテゴリー
+        %a#catBtn.header__top__navi__listsLeft__branded{ href: "#"} ブランド
+      %ul.header__top__navi__listsRight
+        %a.header__top__navi__listsRight__login{ href: "/users/show"} マイページ
