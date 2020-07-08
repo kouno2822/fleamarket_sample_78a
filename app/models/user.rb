@@ -23,5 +23,5 @@ class User < ApplicationRecord
   validates :city, presence:true
   validates :block, presence:true
   VALID_PHONE_REGEX = /\A[0-9]{10,11}\z/
-  validates :phone, format: { with: VALID_PHONE_REGEX }
+  validates :phone, format: { with: VALID_PHONE_REGEX },allow_blank: true
 end
