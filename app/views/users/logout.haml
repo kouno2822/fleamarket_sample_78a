@@ -1,0 +1,15 @@
+-# = render partial: 'header' 
+.Main
+  .Main__left
+    .Main__left__sell_title 出品
+    = link_to "出品する", '#', class: "Main__left__sell_do"
+    = link_to "出品一覧", '#', class: "Main__left__sell_index"
+    .Main__left__buy_title 購入
+    = link_to "購入した商品", '#', class: "Main__left__buy_index"
+    .Main__left__config_title 設定・その他
+    = link_to "プロフィール編集", '#', class:"Main__left__config_user"
+    = link_to "クレジット登録", '#', class:"Main__left__config_credit"
+    = link_to "ログアウト", users_logout_path, class: "Main__left__config_logout"
+  .Main__right_logout
+    = link_to "ログアウト", '#', class: "Main__right_logout-btn"
+-# = render partial: 'footer' 

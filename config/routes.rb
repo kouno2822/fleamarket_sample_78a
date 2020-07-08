@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  root 'items#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'   
   } 
-
-  root 'items#index'
+  get 'users/show', to: 'users#show'
+  get 'users/logout', to: 'users#logout'
   resources :items do
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
