@@ -1,7 +1,7 @@
 .selling-header
   .selling-header__center
     .selling-header__center__logo
-      = image_tag 'logo/logo.png', alt: "FURIMA", width: '200'
+      = link_to image_tag('logo/logo.png', alt: "FURIMA", width: '200'), root_path
 .selling-body
   .selling-body__form
     = form_with model: @item, local: true do |f|
