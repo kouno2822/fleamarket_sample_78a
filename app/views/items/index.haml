@@ -1,9 +1,22 @@
 %body
-  %header
-  -if user_signed_in?
-    = render partial: 'header-login' 
-  -else
-    = render partial: 'header-logout' 
+  %header.header
+    .header__top
+      .header__top__main
+        %a{ href: "#"}
+          .header__top__main__tag
+            = image_tag 'logo.png', class: 'header__top__main__tag'
+        %form.header__top__main__searchBox
+          %input.header__top__main__searchBox__input-text{ placeholder: "キーワードから探す", :type => "text"}/
+          %button.header__top__main__searchBox__button{ type: "submit"}
+            .header__top__main__searchBox__button__search
+              = image_tag 'icon-search 1.png', class: 'header__top__main__searchBox__button__search'
+      .header__top__navi
+        %ul.header__top__navi__listsLeft
+          %a#catBtn.header__top__navi__listsLeft__categori{ href: "#"} カテゴリー
+          %a#catBtn.header__top__navi__listsLeft__branded{ href: "#"} ブランド
+        %ul.header__top__navi__listsRight
+          %a.header__top__navi__listsRight__login{ href: "/users/sign_in"} ログイン
+          %a.header__top__navi__listsRight__signUp{ href: "/users/sign_up"} 新規会員登録
   %main.main
     %section.main__Visual
       .main__Visual__content
@@ -220,9 +233,44 @@
           = image_tag 'App_Store.svg', class: 'banner__title__icon__app'
         %a{ href: "#"}
           = image_tag 'google-play-badge.svg', class: 'banner__title__icon__google'
-  %footer
-  = render partial: 'footer' 
+  %footer.footer
+    .footer__top
+      .footer__top__main
+        .footer__top__main__contents
+          %h2.footer__top__main__contents__head FURIMAについて
+          %ul.footer__top__main__contents__ul
+            %li
+              %a{ href: "#"} 会社概要（運営会社）
+            %li
+              %a{ href: "#"} プライバシーポリシー
+            %li
+              %a{ href: "#"} FURIMA利用規約
+            %li
+              %a{ href: "#"} ポイントに関する特約
+        .footer__top__main__contents
+          %h2.footer__top__main__contents__head FURIMAを見る
+          %ul
+            %li
+              %a{ href: "#"} カテゴリー一覧
+            %li
+              %a{ href: "#"} ブランド一覧
+            %li
+            %li
+        .footer__top__main__contents
+          %h2.footer__top__main__contents__head ヘルプ＆ガイド
+          %ul
+            %li
+              %a{ href: "#"} FURIMAガイド
+            %li
+              %a{ href: "#"} FURIMAロゴ利用ガイドライン
+            %li
+              %a{ href: "#"} お知らせ
+            %li
+      %a{ href: "#"}
+        = image_tag 'logo-white.png', class: 'footer__top__logo'
+      %div
+        %p.footer__top__label © FURIMA
   %a{:href => "/items/new"}
-  .purchaseBtn
-    %span.purchaseBtn__text 出品する
-    = image_tag 'icon_camera.png', class: 'purchaseBtn__icon'
+    .purchaseBtn
+      %span.purchaseBtn__text 出品する
+      = image_tag 'icon_camera.png', class: 'purchaseBtn__icon'
