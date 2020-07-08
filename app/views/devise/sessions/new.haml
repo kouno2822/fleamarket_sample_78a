@@ -1,0 +1,25 @@
+.Login
+  .Login__top
+    .Login__top-image
+      = image_tag 'logo.png', size: "120x33"
+  .Login__main
+    .Login__main__left
+    .Login__main__center
+      = form_with model: @user, url: user_registration_path, class: "Login__main__center__form", local: true do |f|
+        - flash.each do |key, value|
+          = content_tag :div, value, class: key
+        .Login__main__center__form-email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス'
+        .Login__main__center__form-pass
+          %br/
+          = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード'
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Log in"
+      = render "devise/shared/links"
+    .Login__main__right
+  .Login__buttom

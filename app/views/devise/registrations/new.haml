@@ -1,0 +1,85 @@
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :ニックネーム
+    %br/
+    = f.text_field :nickname, autofocus: true, autocomplete: "nickname",placeholder: '例）タロウ'
+  .field
+    = f.label :メールアドレス
+    %br/
+    = f.email_field :email, autocomplete: "email",placeholder: 'aiu@eo.com'
+  .field
+    = f.label :パスワード（７文字以上）
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = f.label :姓（全角）
+    %br/
+    = f.text_field :last_name,placeholder: '例）山田'
+  .field
+    = f.label :名（全角）
+    %br/
+    = f.text_field :first_name,placeholder: '例）太郎'
+  .field
+    = f.label :姓カナ（全角）
+    %br/
+    = f.text_field :last_name_furi,placeholder: '例）ヤマダ'
+  .field
+    = f.label :名カナ（全角）
+    %br/
+    = f.text_field :first_name_furi,placeholder: '例）タロウ'
+  .field
+    = f.label :生年月日
+    %br/
+    = f.date_select :birth, {start_year: 1900, end_year: 2100}
+  .field
+    = f.label :送付先：姓
+    %br/
+    = f.text_field :send_last_name,placeholder: '例）山田'
+  .field
+    = f.label :送付先：名
+    %br/
+    = f.text_field :send_first_name,placeholder: '例）太郎'
+  .field
+    = f.label :送付先：姓（カナ）
+    %br/
+    = f.text_field :send_last_name_furi,placeholder: '例）ヤマダ'
+  .field
+    = f.label :送付先：名（カナ）
+    %br/
+    = f.text_field :send_first_name_furi,placeholder: '例）タロウ'
+  .field
+    = f.label :郵便番号（半角数字、ハイフンなし）
+    %br/
+    = f.text_field :post,placeholder: '例）0001111'
+  .field
+    = f.label :都道府県
+    %br/
+    = f.text_field :prefecture,placeholder: '例）愛知県'
+  .field
+    = f.label :市区町村
+    %br/
+    = f.text_field :city,placeholder: '例）名古屋市中区'
+  .field
+    = f.label :番地
+    %br/
+    = f.text_field :block,placeholder: '例）栄3-10'
+  .field
+    = f.label :マンション名、ビル名、部屋番号
+    %br/
+    = f.text_field :building,placeholder: '例）アパート栄 301'
+  .field
+    = f.label :送付先：電話番号（半角数字、ハイフンなし）
+    %br/
+    = f.text_field :phone,placeholder: '例）09011110000'
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
