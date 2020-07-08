@@ -15,8 +15,8 @@
           %a#catBtn.header__top__navi__listsLeft__categori{ href: "#"} カテゴリー
           %a#catBtn.header__top__navi__listsLeft__branded{ href: "#"} ブランド
         %ul.header__top__navi__listsRight
-          %a.header__top__navi__listsRight__login{ href: "#"} ログイン
-          %a.header__top__navi__listsRight__signUp{ href: "#"} 新規会員登録
+          %a.header__top__navi__listsRight__login{ href: "/users/sign_in"} ログイン
+          %a.header__top__navi__listsRight__signUp{ href: "/users/sign_up"} 新規会員登録
   %main.main
     %section.main__Visual
       .main__Visual__content
@@ -270,7 +270,7 @@
         = image_tag 'logo-white.png', class: 'footer__top__logo'
       %div
         %p.footer__top__label © FURIMA
-  %a{:href => "#"}
+  %a{:href => "/items/new"}
     .purchaseBtn
       %span.purchaseBtn__text 出品する
       = image_tag 'icon_camera.png', class: 'purchaseBtn__icon'
