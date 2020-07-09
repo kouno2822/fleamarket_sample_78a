@@ -14,10 +14,7 @@
     .Main__right__title 
       = current_user.nickname
       さんのマイページ
-    .Main__right__sell_index
-      = link_to "出品中の商品一覧", '#', class: "Main__right__sell_index-title"
-      .Main__right__sell_index-display
-        = render partial: 'user_sell', collection: @sell_items, as: 'item'
+    = render partial: 'user_sell', collection: @sell_items, as: 'item'
     .Main__right__buy_index
       = link_to "購入した商品一覧", '#', class: "Main__right__buy_index-title"
       .Main__right__buy_index-display

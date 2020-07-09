@@ -1,10 +1,22 @@
 $border_color: rgb(216, 216, 216);
 $sidebar_fontcolor: rgb(80, 80, 80);
+@mixin box{
+  border: solid 1px $border_color;
+  height: 50px;
+  width: 13vw;
+  min-width: 100px;
+  line-height: 50px;
+  padding-left: 10px;
+  font-size: 18px;
+  background-color: #fff;
+  display: block;
+  text-decoration: none;
+  color: $sidebar_fontcolor;
+}
 
 .Main{
   display: flex;
   background-color: rgb(243, 243, 243);
-  height: 100vh;
   width: 100vw;
   &__left{
     width: 20vw;
@@ -17,28 +29,10 @@ $sidebar_fontcolor: rgb(80, 80, 80);
       color: #000;
     }
     &__sell_do{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__sell_index{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__buy_title{
       margin-top: 60px;
@@ -49,16 +43,7 @@ $sidebar_fontcolor: rgb(80, 80, 80);
       color: #000;
     }
     &__buy_index{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__config_title{
       margin-top: 60px;
@@ -69,40 +54,13 @@ $sidebar_fontcolor: rgb(80, 80, 80);
       color: #000;
     }
     &__config_user{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__config_credit{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__config_logout{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
   }
   &__right{
@@ -164,10 +122,10 @@ $sidebar_fontcolor: rgb(80, 80, 80);
     }
     &__buy_index{
       border: solid 1px $border_color;
-      height: 35%;
+      height: 200px;
       margin-top: 100px;
       &-title{
-        height: 15%;
+        height: 30px;
         padding-left: 10px;
         line-height: 200%;
         display: block;

@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to "/users/show"
     else
-      render :new
+      redirect_to "/items/new", flash: { error: @item.errors.full_messages }
     end
   end
   
