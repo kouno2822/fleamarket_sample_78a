@@ -40,7 +40,8 @@
 |prefecture_id|integer|null: false|
 |delivery_day|string|null: false|
 |price|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|seller_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
