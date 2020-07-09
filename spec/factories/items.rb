@@ -10,7 +10,8 @@ FactoryBot.define do
     prefecture_id {"1"}
     delivery_day {"1~2日で発送"}
     price {"1000"}
-    user_id {"1"}
+    seller_id {"1"}
+    buyer_id {""}
     category_id {"202"}
 
     after(:build) do |item|

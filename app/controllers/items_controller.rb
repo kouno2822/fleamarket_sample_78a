@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to "/users/show"
     else
       render :new
     end
@@ -33,6 +33,6 @@ class ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(:name, :brand, :explanation, :status, :sell_or_sold, :delivery_burden,
-       :prefecture_id, :delivery_day, :price, :user_id, :category_id, images_attributes: [:image])
+       :prefecture_id, :delivery_day, :price, :seller_id, :buyer_id, :category_id, images_attributes: [:image])
   end
 end

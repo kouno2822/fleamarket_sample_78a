@@ -6,7 +6,7 @@ $(function(){
     return html;
   }
   // 子カテゴリーの表示作成
-  function appendChidrenBox(insertHTML){
+  function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml =`<div class='selling-body__form__field__category__child' id= 'child_wrapper'>
                         <select class="selling-body__form__field__category__child--select" id="child_category" name="item[category_id]">
@@ -18,7 +18,7 @@ $(function(){
   }
 
   // // 孫カテゴリーの表示作成
-  function appendGrandchidrenBox(insertHTML){
+  function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='selling-body__form__field__category__grandchild' id= 'grandchild_wrapper'>
                               <select class="selling-body__form__field__category__grandchild--select" id="grandchild_category" name="item[category_id]">
@@ -48,7 +48,7 @@ $(function(){
         children.forEach(function(child){
           insertHTML += appendOption(child);
         });
-        appendChidrenBox(insertHTML);
+        appendChildrenBox(insertHTML);
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
@@ -76,7 +76,7 @@ $(function(){
           grandchildren.forEach(function(grandchild){
             insertHTML += appendOption(grandchild);
           });
-          appendGrandchidrenBox(insertHTML);
+          appendGrandchildrenBox(insertHTML);
         }
       })
       .fail(function(){
