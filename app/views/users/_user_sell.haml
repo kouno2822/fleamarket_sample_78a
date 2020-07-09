@@ -1,10 +1,13 @@
-= link_to '#', class: 'Main__right__sell_index-display__items' do
-  .Main__right__sell_index-display__items-top
-    = image_tag item.images.first.image.url, alt: '商品画像', class: 'Main__right__sell_index-display__items-top-image'
-  .Main__right__sell_index-display__items-bottom
-    .Main__right__sell_index-display__items-bottom-name
-      = item.name
-    .Main__right__sell_index-display__items-bottom-price
-      = item.price
-      円
-    .Main__right__sell_index-display__items-bottom-tax (税込)
+.Main__right__sell_index
+  = link_to "出品中の商品一覧", '#', class: "Main__right__sell_index-title"
+  .Main__right__sell_index-display
+    = link_to '#', class: 'Main__right__sell_index-display__items' do
+      .Main__right__sell_index-display__items-top
+        = image_tag item.images.first.image.url, alt: '商品画像', class: 'Main__right__sell_index-display__items-top-image'
+      .Main__right__sell_index-display__items-bottom
+        .Main__right__sell_index-display__items-bottom-name
+          = item.name
+        .Main__right__sell_index-display__items-bottom-price
+          = item.price
+          円
+        .Main__right__sell_index-display__items-bottom-tax (税込)
