@@ -20,6 +20,14 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    
+  end
   
   def move_to_login
     redirect_to "/users/sign_in", notice: 'ログインするとご利用いただけます。' unless user_signed_in?
