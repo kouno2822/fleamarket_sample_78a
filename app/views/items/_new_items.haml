@@ -1,0 +1,11 @@
+- @sell_items.each do |item|
+  = link_to '#', class: 'main__pickup__productBox__productLists__productList' do
+    .main__pickup__productBox__productLists__productList__imgs
+      = image_tag item.images.first.image.url, alt: '商品画像', class: 'main__pickup__productBox__productLists__productList__imgs__img'
+    .main__pickup__productBox__productLists__productList__body
+      .main__pickup__productBox__productLists__productList__body__name
+        = item.name
+      .main__pickup__productBox__productLists__productList__body__price
+        = item.price
+        円
+      .main__pickup__productBox__productLists__productList__body__tax (税込)
