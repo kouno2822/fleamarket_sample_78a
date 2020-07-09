@@ -57,11 +57,11 @@ describe Item do
       expect(item.errors[:price]).to include("を入力してください")
     end
 
-    # 9. user_idが空では出品できないこと
-    it "is invalid without a user_id" do
-      item = build(:item, user_id: nil)
+    # 9. seller_idが空では出品できないこと
+    it "is invalid without a seller_id" do
+      item = build(:item, seller_id: nil)
       item.valid?
-      expect(item.errors[:user_id]).to include("を入力してください")
+      expect(item.errors[:seller_id]).to include("を入力してください")
     end
 
     # 10. category_idが空では出品できないこと
@@ -120,7 +120,7 @@ describe Item do
     end
 
     # 18. priceが10,000,000円以上では出品できないこと
-    it "is invalid with a price less than 10,000,000 yen" do
+    it "is invalid with a price more than 10,000,000 yen" do
       item = build(:item, price: 10000000)
       item.valid?
       expect(item.errors[:price]).to include()
