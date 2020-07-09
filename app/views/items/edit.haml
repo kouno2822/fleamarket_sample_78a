@@ -1,0 +1,97 @@
+.edit-header
+  .edit-header__center
+    .edit-header__center__logo
+      = link_to image_tag('logo/logo.png', alt: "FURIMA", width: '200'), root_path
+.edit-body
+  .edit-body__form
+    = form_with model: @item, local: true do |f|
+      = render partial: "error_messages"
+      .edit-body__form__text
+        商品情報編集
+      .edit-body__form__field
+        .character
+          出品画像
+          %span.must 必須
+        .edit-body__form__field__image
+          = f.fields_for :images do |i|
+            = i.file_field :image, class: "image-file"
+            %br/
+      .edit-body__form__field
+        .character
+          商品名
+          %span.must 必須
+        = f.text_field :name, placeholder: "40文字まで"
+        %br/
+      .edit-body__form__field
+        .character
+          商品の説明
+          %span.must 必須
+        = f.text_area :explanation, placeholder: "商品の説明（必須　1,000文字以内）"
+        %br/
+      .h-character
+        商品の詳細
+      .edit-body__form__field
+        .character
+          カテゴリー
+          %span.must 必須
+        .edit-body__form__field__category
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {id: 'parent_category'}
+      .edit-body__form__field
+        .character
+          ブランド
+        = f.text_field :brand, placeholder: "例）シャネル"
+        %br/
+      .edit-body__form__field
+        .character
+          商品の状態
+          %span.must 必須
+        = f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],           |
+          ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], include_blank: "選択してください" |
+        %br/
+      = f.hidden_field :sell_or_sold, value: "出品中"
+      = f.hidden_field :seller_id, value: current_user.id
+      = f.hidden_field :buyer_id, value: ""
+      .h-character
+        配送について
+      .edit-body__form__field
+        .character
+          配送料の負担
+          %span.must 必須
+        = f.select :delivery_burden, [["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], include_blank: "選択してください"
+        %br/
+      .edit-body__form__field
+        .character
+          発送元の地域
+          %span.must 必須
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
+        %br/
+      .edit-body__form__field
+        .character
+          発送までの日数
+          %span.must 必須
+        = f.select :delivery_day, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], include_blank: "選択してください"
+        %br/
+      .h-character
+        価格（¥300〜9,999,999）
+      .edit-body__form__field--sale
+        .sale-character
+          .character
+            販売価格
+            %span.must 必須
+        .sale-value
+          ¥ #{f.number_field :price, placeholder: "0"}
+          %br/
+      .edit-body__form__field--sale
+        .sale-character
+          販売手数料（10%）
+        .sale-fee
+          \---
+      .edit-body__form__field--sale
+        .sale-character
+          販売利益
+        .sale-profit
+          \---
+      .edit-body__form__btn-area
+        = f.submit "出品する", class: "submit-btn"
+      = f.hidden_field :user_id, value: current_user.id
+.edit-footer

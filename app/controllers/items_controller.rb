@@ -34,6 +34,14 @@ class ItemsController < ApplicationController
       redirect_to "/items/new", flash: { error: @item.errors.full_messages }
     end
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    
+  end
   
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
