@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :move_to_login, except: :index
 
   def index
+    @sell_items = Item.where(sell_or_sold: '出品中').order(created_at: :desc).limit(4)
+    @random_items = Item.where(sell_or_sold: '出品中').order("RAND()").limit(4)
   end
   
   def new
