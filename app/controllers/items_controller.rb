@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :move_to_login, except: :index
+
   def index
   end
   
@@ -17,6 +19,10 @@ class ItemsController < ApplicationController
     end
   end
   
+  def move_to_login
+    redirect_to "/users/sign_in", notice: 'ログインするとご利用いただけます。' unless user_signed_in?
+  end
+
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
