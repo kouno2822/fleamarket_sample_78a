@@ -117,10 +117,9 @@ $sidebar_fontcolor: rgb(80, 80, 80);
     }
     &__sell_index{
       border: solid 1px $border_color;
-      height: 35%;
       margin-top: 40px;
       &-title{
-        height: 15%;
+        height: 30px;
         padding-left: 10px;
         line-height: 200%;
         display: block;
@@ -130,8 +129,37 @@ $sidebar_fontcolor: rgb(80, 80, 80);
         font-weight: bold;
       }
       &-display{
-        height: 85%;
         background: #fff;
+        display: flex;
+        overflow: auto;
+        &__items{
+          &-top{
+            &-image{
+              width: 220px;
+              height: 150px;
+              object-fit: cover;
+            }
+          }
+          &-bottom{
+            color: #333;
+            padding: 16px;
+            &-name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+              margin: 0;
+              font-weight: normal;
+            }
+            &-price{
+              font-size: 16px;
+              margin-top: 5px;
+            }
+            &-tax{
+              font-size: 10px;
+            }
+          }
+        }
       }
     }
     &__buy_index{
