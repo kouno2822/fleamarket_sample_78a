@@ -4,6 +4,7 @@
     = render partial: 'header-login' 
   -else
     = render partial: 'header-logout' 
+  
   %main.main
     %section.main__Visual
       .main__Visual__content
@@ -25,7 +26,7 @@
         %span{ style: "border-bottom: solid 3px #3CCACE; padding-bottom: 15px;"}> 選ばれる
         3つの理由
       %ul.main__Introduction__lists
-        %li.main__Introduction__lists__list
+        .main__Introduction__lists__list
           .main__Introduction__lists__list__pict
             = image_tag 'pict-reason-01.jpg', class: 'main__Introduction__lists__list__pict',  width: "306"
             %span.main__Introduction__lists__list__number 1
@@ -34,7 +35,7 @@
             ですぐに出品
           %p.main__Introduction__lists__list__description
             スマホで入力するだけで簡単に出品できる！
-        %li.main__Introduction__lists__list
+        .main__Introduction__lists__list
           .main__Introduction__lists__list__pict
             = image_tag 'pict-reason-02.jpg', class: 'main__Introduction__lists__list__pict',  width: "306"
             %span.main__Introduction__lists__list__number 2
@@ -43,7 +44,7 @@
             で使いやすい
           %p.main__Introduction__lists__list__description
             めんどくさい入力は必要なく、検索も購入もスムーズ！
-        %li.main__Introduction__lists__listlist
+        .main__Introduction__lists__listlist
           .main__Introduction__lists__listlist__pict
             = image_tag 'pict-reason-03.jpg', class: 'main__Introduction__lists__list__pict',  width: "306"
             %span.main__Introduction__lists__listlist__number 3
