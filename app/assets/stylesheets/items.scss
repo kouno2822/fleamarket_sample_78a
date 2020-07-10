@@ -46,6 +46,27 @@ body {
         }
       }
     }
+  }
+}
+.navi {
+  height: 50px;
+  display: flex;
+  padding: 0 140px;
+  &__branded {
+    padding-top: 15px;
+    margin-left: 40px;
+  }
+  &__listsRight {
+    padding-top: 10px;
+    margin: 0 0 0 auto;
+    &__signUp{
+      margin-left: 16px;
+    }
+  }
+}
+.categories {
+  width: 80px;
+  &__top {
     &__navi {
       max-width: 1040px;
       width: 100%;
@@ -82,6 +103,67 @@ body {
     }
   }
 }
+.category__child, .category__parent, .category__grandchild{
+  display: none;
+}
+
+
+// カテゴリーの大枠の要素の共通項
+.category__list{
+  position: absolute;
+  height: 630px;
+  background-color: white;
+  border-right: 1px solid whitesmoke;
+}
+
+// 子要素はカテゴリー名の共通項
+.category__child--name{
+  width: 100%;
+  color: black;
+  display: inline-block;
+  padding: 3px 15px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.categories{
+  font-size: 14px;
+  &:hover{
+    .category__parent{
+      // top: 122px;
+      display: block;
+      &--name{
+        width: 100%;
+        color: black;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
+      li {
+        &:hover{
+          .category__child{
+            width: 100%;
+            display: block;
+            top: 0;
+            left: 221px;
+            li {
+              &:hover{
+                .category__grandchild{
+                  width: 300px;
+                  display: block;
+                  top: 0;
+                  left: 220px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 a {
   text-decoration: none;
@@ -307,12 +389,20 @@ a {
               margin: 0;
               font-weight: normal;
             }
-            &__price {
+            &__details {
               font-size: 16px;
-              margin-top: 5px;
-            }
-            &__tax{
-              font-size: 10px;
+              &__ul {
+                display: flex;
+                margin: 0;
+                justify-content:space-between;
+                &__li {
+                  font-size: 16px;
+                }
+              }
+              &__p{
+                font-size: 12px;
+                margin: 0;
+              }
             }
           }
         }
@@ -418,12 +508,15 @@ ul {
 
 li {
   color: inherit; 
-  font-size: 12px;
 }
 
-li:hover{
-  text-decoration: underline;
+.footer__top__main__contents__li {
+  font-size: 12px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
+
 
 a{
   color: inherit;

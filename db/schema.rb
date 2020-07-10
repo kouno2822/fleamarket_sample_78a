@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_014942) do
     t.string "send_first_name", null: false
     t.string "send_last_name_furi", null: false
     t.string "send_first_name_furi", null: false
-    t.integer "post", null: false
+    t.string "post", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "block", null: false
