@@ -1,2 +1,12 @@
-%h1 Card#show
-%p Find me in app/views/card/show.html.haml
+登録クレジットカード情報
+%br
+= "**** **** **** " + @default_card_information.last4
+%br
+- exp_month = @default_card_information.exp_month.to_s
+- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+= exp_month + " / " + exp_year
+= button_to '削除', delete_card_index_path, { method: :post, name: "card_id", value: ""}
+
+= form_with url: delete_card_index_path, id: 'charge-form', name: "inputForm" do |f|
+  = f.hidden_field name: "card_id", value: ""
+  = f.submit "削除する"
