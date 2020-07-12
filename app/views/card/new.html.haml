@@ -1,16 +1,26 @@
-= form_with url: pay_card_index_path, id: 'charge-form', name: "inputForm" do |f|
-  カード番号
-  = f.text_field :number, class: "number", placeholder: "半角数字のみ" ,maxlength: "16", id: "card_number"
-  %br
-  有効期限
-  = f.date_select :exp_month, {discard_year: true, discard_day: true, use_month_numbers: true}, id: "exp_month"
-  月
-  = f.date_select :exp_year, {discard_month: true, discard_day: true, start_year: 2020, end_year: 2029}, id: "exp_year"
-  %span 年
-  %br
-  セキュリティコード
-  = f.text_field :cvc, class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-  #card_token
-  = f.submit "追加する", id: "token_submit"
-  生成されたトークン：
-  #token
+= render partial: '/items/header-login' 
+.Main
+  = render partial: '/users/main-left'
+  .Main-card
+    .Main-card__section
+      .Main-card__section__form
+        %h2.Main-card__section__form--title
+          クレジットカード登録
+        .Main-card__section__form__input
+          = form_with url: pay_card_index_path, id: 'charge-form', name: "inputForm" do |f|
+            .Main-card__section__form__input--number
+              カード番号
+              = f.text_field :number, class: "number", placeholder: "半角数字 16桁" ,maxlength: "16", id: "card_number"
+            .Main-card__section__form__input--expire
+              有効期限
+              = f.date_select :exp_month, {discard_year: true, discard_day: true, use_month_numbers: true, include_blank: true}, id: "exp_month"
+              月
+              = f.date_select :exp_year, {discard_month: true, discard_day: true, start_year: 2020, end_year: 2029, include_blank: true}, id: "exp_year"
+              年
+            .Main-card__section__form__input--code
+              セキュリティコード
+              = f.text_field :cvc, class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+            #card_token
+              = f.submit "登録する", id: "token_submit"
+
+= render partial: '/items/footer' 

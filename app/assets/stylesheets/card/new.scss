@@ -1,0 +1,77 @@
+.Main-card{
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+
+  &__section {
+    height: 400px;
+    width: 700px;
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+
+    &__form {
+      width: 300px;
+
+      &--title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      &__input {
+
+        &--number {
+          margin: 10px 0;
+
+          #card_number {
+            width: 80%;
+            font-size: medium;
+            margin: 5px 0;
+          }
+        }
+
+        &--expire {
+          margin: 10px 0;
+
+          #exp_month {
+            margin-left: 5px;
+            font-size: medium;
+          }
+          #exp_year {
+            margin-left: 5px;
+            font-size: medium;
+          }
+        }
+
+        &--code {
+          margin: 10px 0;
+
+          #cvc {
+            width: 57%;
+          }
+        }
+
+        #card_token {
+          height: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          #token_submit {
+            height: 50px;
+            width: 250px;
+            background-color: #33CCCC;
+            color: white;
+            font-weight: bold;
+            font-size: medium;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

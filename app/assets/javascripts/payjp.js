@@ -1,5 +1,5 @@
 document.addEventListener(
-  "DOMContentLoaded", function(e){
+  "DOMContentLoaded", function(){
     if ($("#token_submit") != null) { //token_submitというidがnullの場合、下記コードを実行しない
       Payjp.setPublicKey("pk_test_e0182fd565758614f20265fb"); //ここに公開鍵を直書き
       $("#token_submit").on("click", function(e){ //ボタンが押されたときに作動します

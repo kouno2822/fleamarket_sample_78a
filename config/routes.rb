@@ -15,11 +15,21 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-  
+
   resources :items do
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
+  
 end
+
