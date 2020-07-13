@@ -13,9 +13,6 @@
       border-bottom: 1px solid #EEEEEE;
     }
 
-    &__item-name {
-    }
-
     &__price {
       font-size: large;
       font-weight: bold;
@@ -39,10 +36,6 @@
 
       &--number {
         margin-top: 10px;
-      }
-
-      &--expire {
-
       }
     }
 
@@ -80,7 +73,6 @@
         border: none;
         cursor: pointer;
       }
-
     }
   }
 }
