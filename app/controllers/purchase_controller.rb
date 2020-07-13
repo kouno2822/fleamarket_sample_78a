@@ -3,7 +3,7 @@ class PurchaseController < ApplicationController
   before_action :set_card, except: :done
   require 'payjp'
 
-  def index
+  def check
     if @card.blank?
       redirect_to controller: "card", action: "new"
     else
