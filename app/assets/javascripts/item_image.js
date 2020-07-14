@@ -30,9 +30,7 @@ $(function(){
         var src = fileReader.result
         var html= `<div class='item-image' data-image="${file.name}">
                     <div class='item-image__content'>
-                      <div class='item-image__content--icon'>
-                        <img src=${src} width="124" height="110" >
-                      </div>
+                      <img src=${src} width="124" height="110" >
                     </div>
                     <div class='image-remove'>削除</div>
                   </div>`;
