@@ -53,11 +53,11 @@ body {
   display: flex;
   padding: 0 140px;
   &__branded {
-    padding-top: 15px;
+    padding-top: 18px;
     margin-left: 40px;
   }
   &__listsRight {
-    padding-top: 10px;
+    padding-top: 13px;
     margin: 0 0 0 auto;
     &__signUp{
       margin-left: 16px;
@@ -102,6 +102,9 @@ body {
       }
     }
   }
+}
+.navi__branded, .navi__listsRight__login, .navi__listsRight__signUp {
+  font-size: 14px;
 }
 .category__child, .category__parent, .category__grandchild{
   display: none;
