@@ -10,17 +10,10 @@
         .character
           出品画像
           %span.must 必須
-          %p 5枚までアップロードできます
         .selling-body__form__field__image
-          .selling-body__form__field__image--input#image-num-0
-            = f.fields_for :images do |i|
-              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id: "img-file"
-              %label{for: "img-file"}
-                .whole-link
-                  .camera-center
-                    %i.fas.fa-camera 
-                    .click
-                      クリックしてファイルをアップロード
+          = f.fields_for :images do |i|
+            = i.file_field :image, class: "image-file"
+            %br/
       .selling-body__form__field
         .character
           商品名
@@ -98,4 +91,5 @@
           \---
       .selling-body__form__btn-area
         = f.submit "出品する", class: "submit-btn"
+      = f.hidden_field :user_id, value: current_user.id
 .selling-footer
