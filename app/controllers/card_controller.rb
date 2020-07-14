@@ -1,5 +1,6 @@
 class CardController < ApplicationController
   before_action :set_card, except: :pay
+  before_action :set_parent, only: [:new, :show]
   require "payjp"
 
   def new
