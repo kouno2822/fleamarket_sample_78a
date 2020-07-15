@@ -32,6 +32,8 @@ class PurchaseController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  private
+  
   def move_to_detail
     @item = Item.find(params[:item_id])
     redirect_to '/users/show' if current_user.id == @item.seller_id || @item.buyer_id != nil

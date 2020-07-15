@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   def credit
   end
 
+  private
+  
   def move_to_login
     redirect_to "/users/sign_in", notice: 'ログインするとご利用いただけます。' unless user_signed_in?
   end

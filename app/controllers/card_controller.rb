@@ -47,6 +47,8 @@ class CardController < ApplicationController
     end
   end
 
+  private
+  
   def set_card
     @card = Card.find_by(user_id: current_user.id)
   end
