@@ -1,5 +1,5 @@
 - @sell_items.each do |item|
-  = link_to "/items/#{item.id}", class: 'main__pickup__productBox__productLists__productList' do
+  = link_to item_path(item), class: 'main__pickup__productBox__productLists__productList' do
     .main__pickup__productBox__productLists__productList__imgs
       = image_tag item.images.first.image.url, alt: '商品画像', class: 'main__pickup__productBox__productLists__productList__imgs__img'
     .main__pickup__productBox__productLists__productList__body

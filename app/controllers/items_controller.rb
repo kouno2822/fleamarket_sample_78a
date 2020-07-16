@@ -24,7 +24,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item.destroy
+    if @item.destroy
+    else
+      redirect_to  item_path(@item)
+      :javascript
+        alert('削除できませんでした。');
+    end
   end
 
   def show
