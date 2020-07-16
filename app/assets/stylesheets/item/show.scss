@@ -35,7 +35,7 @@
             width: 700px;
             margin: 0 auto;
             border-collapse: collapse ;
-            &__tbody {
+            &__tablebody {
               border-collapse:collapse;	
               &__title {
                 background-color: #EEEEEE;
@@ -76,7 +76,7 @@
   margin-top: 15px;
   cursor: pointer;
 }
-.btn-bule{
+.btn-blue{
   background-color: rgb(4, 197, 245);
 }
 .btn-red{

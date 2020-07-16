@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
     item.destroy
   end
 
@@ -48,12 +47,12 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find(params[:child_id]).children
   end
-  
+
+  private
+
   def set_item
     @item = Item.find(params[:id])
   end
-
-  private
   
   def item_params
     params.require(:item).permit(:name, :brand, :explanation, :status, :sell_or_sold, :delivery_burden,

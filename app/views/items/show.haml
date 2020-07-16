@@ -29,29 +29,29 @@
           - if current_user.id == @item.seller_id
             .listing-item-change-box
               = link_to edit_item_path(@item.id) do
-                %button.btn-default.btn-bule{type: "submit"} 商品の編集
+                %button.btn-default.btn-blue{type: "submit"} 商品の編集
               = link_to item_path(@item.id), method: :delete do
                 %button.btn-default.btn-red{type: "submit"} この商品を削除する
 
           - else
-            = link_to "/purchase/items/:item_id/check#{@item.id}" do
+            = link_to "/purchase/items/#{@item.id}/check" do
               %input.product-listing__purchase-btn{type:"submit", value:"購入画面に進む"}/
         - else
-          = link_to "/purchase/items/:item_id/check#{@item.id}" do
+          = link_to "/users/sign_in" do
             %input.product-listing__purchase-btn{type:"submit", value:"購入画面に進むログイン"}/
 
         .main__showMain__contentRight__topContent__temDetail
           = @item.explanation
 
         %table.main__showMain__contentRight__topContent__table
-          %tbody.main__showMain__contentRight__topContent__table__tbody
+          %tablebody.main__showMain__contentRight__topContent__table__tablebody
             %tr
-              %th.main__showMain__contentRight__topContent__table__tbody__title 出品者
-              %td.main__showMain__contentRight__topContent__table__tbody__comment
+              %th.main__showMain__contentRight__topContent__table__tablebody__title 出品者
+              %td.main__showMain__contentRight__topContent__table__tablebody__comment
                 =@item.seller.nickname
             %tr
-              %th.main__showMain__contentRight__topContent__table__tbody__title カテゴリー
-              %td.main__showMain__contentRight__topContent__table__tbody__comment
+              %th.main__showMain__contentRight__topContent__table__tablebody__title カテゴリー
+              %td.main__showMain__contentRight__topContent__table__tablebody__comment
                 %a.category{:href => "#"}
                   = @item_category_parent.name
                 %br/
@@ -61,24 +61,24 @@
                 %a.category{:href => "#"}
                   = @item_category_grandchild.name
             %tr
-              %th.main__showMain__contentRight__topContent__table__tbody__title ブランド
-              %td.main__showMain__contentRight__topContent__table__tbody__comment
+              %th.main__showMain__contentRight__topContent__table__tablebody__title ブランド
+              %td.main__showMain__contentRight__topContent__table__tablebody__comment
                 = @item.brand
             %tr
-              %th.main__showMain__contentRight__topContent__table__tbody__title 商品の状態
-              %td.main__showMain__contentRight__topContent__table__tbody__comment
+              %th.main__showMain__contentRight__topContent__table__tablebody__title 商品の状態
+              %td.main__showMain__contentRight__topContent__table__tablebody__comment
                 = @item.status
             %tr
-              %th.main__showMain__contentRight__topContent__table__tbody__title 配送料の負担
-              %td.main__showMain__contentRight__topContent__table__tbody__comment
+              %th.main__showMain__contentRight__topContent__table__tablebody__title 配送料の負担
+              %td.main__showMain__contentRight__topContent__table__tablebody__comment
                 = @item.delivery_burden
             %tr
-              %th.main__showMain__contentRight__topContent__table__tbody__title 発送元の地域
-              %td.main__showMain__contentRight__topContent__table__tbody__comment
+              %th.main__showMain__contentRight__topContent__table__tablebody__title 発送元の地域
+              %td.main__showMain__contentRight__topContent__table__tablebody__comment
                 %a.prefecture{:href => "#"}= @item.prefecture.name
             %tr
-              %th.main__showMain__contentRight__topContent__table__tbody__title 発送日の目安
-              %td.main__showMain__contentRight__topContent__table__tbody__comment
+              %th.main__showMain__contentRight__topContent__table__tablebody__title 発送日の目安
+              %td.main__showMain__contentRight__topContent__table__tablebody__comment
                 = @item.delivery_day
 
 
