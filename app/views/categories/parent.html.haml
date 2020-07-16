@@ -1,0 +1,19 @@
+-if user_signed_in?
+  = render partial: '/items/header-login' 
+-else
+  = render partial: '/items/header-logout' 
+
+.center
+  .index
+    .index__title
+      = "#{@category.name}の商品一覧"
+    .index__category
+    - @items.each do |item|
+      .index__image
+        = image_tag item.images.first.image.url
+      .index__name
+        = item.name
+      .index__price
+        = item.price
+
+= render partial: '/items/footer'
