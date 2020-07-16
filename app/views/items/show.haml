@@ -34,10 +34,10 @@
                 %button.btn-default.btn-red{type: "submit"} この商品を削除する
 
           - else
-            = link_to "/purchase/items/#{@item.id}/check" do
+            = link_to "#" do
               %input.product-listing__purchase-btn{type:"submit", value:"購入画面に進む"}/
         - else
-          = link_to "/users/sign_in" do
+          = link_to user_session_path do
             %input.product-listing__purchase-btn{type:"submit", value:"購入画面に進むログイン"}/
 
         .main__showMain__contentRight__topContent__temDetail
