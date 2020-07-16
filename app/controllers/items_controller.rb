@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
 
   def destroy
     unless @item.seller_id == current_user.id && @item.destroy
-      render "/items/#{@item.id}"
+      redirect_to  item_path(@item)
     end
   end
 
