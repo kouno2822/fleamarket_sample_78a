@@ -13,4 +13,23 @@ Rails.application.routes.draw do
       get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+
+  resources :purchase, only: [:index] do
+    collection do
+      resources :items, only: [:index] do
+        get 'check', to: 'purchase#check'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
+    end
+  end
+
+  resources :categories, only: [:index] do
+    member do
+      get 'parent'
+      get 'child'
+      get 'grandchild'
+    end
+  end
+  
 end

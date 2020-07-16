@@ -1,0 +1,37 @@
+.center {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  
+  .index {
+    width: 700px;
+    background-color: white;
+    margin: 30px 0 100px;
+
+    &__title {
+      height: 55px;
+      width: 700px;
+      background-color: #33CCCC;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+      line-height: 55px;
+    }
+    
+    &__image {
+
+    }
+    
+    &__name {
+
+    }
+
+    &__price {
+
+    }
+  }
+}
