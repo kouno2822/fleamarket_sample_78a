@@ -1,0 +1,28 @@
+.Main-card__section__form__show {
+  display: flex;
+  justify-content: space-between;
+
+  &--credit {
+    font-size: large;
+
+    &--card {
+      font-size: medium;
+      font-weight: bold;
+      margin: 13px 0;
+    }
+    &--number {
+      margin-bottom: 8px;
+    }
+  }
+  &--delete {
+
+    #credit-delete {
+      color: #FF0461;
+      border: 1px solid #FF0461;
+      border-radius: 3px;
+      background-color: white;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+  }
+}
