@@ -24,11 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
-    else
-      redirect_to  item_path(@item)
-      :javascript
-        alert('削除できませんでした。');
+    unless @item.seller_id == current_user.id && @item.destroy
+      render "/items/#{@item.id}"
     end
   end
 
