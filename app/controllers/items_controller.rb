@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item.destroy
+    @item.destroy
   end
 
   def show
@@ -32,10 +32,6 @@ class ItemsController < ApplicationController
     @item_category_grandchild = Category.find(@item.category_id)
     @item_category_child = @item_category_grandchild.parent
     @item_category_parent = @item_category_child.parent
-  end
-
-  def move_to_login
-    redirect_to "/users/sign_in", notice: 'ログインするとご利用いただけます。' unless user_signed_in?
   end
 
   # 親カテゴリーが選択された後に動くアクション
@@ -54,6 +50,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
   
+  def move_to_login
+    redirect_to "/users/sign_in", notice: 'ログインするとご利用いただけます。' unless user_signed_in?
+  end
+
   def item_params
     params.require(:item).permit(:name, :brand, :explanation, :status, :sell_or_sold, :delivery_burden,
        :prefecture_id, :delivery_day, :price, :seller_id, :buyer_id, :category_id, images_attributes: [:image])

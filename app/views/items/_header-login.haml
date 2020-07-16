@@ -14,8 +14,7 @@
         %ul.categories__top
           %li
             = link_to "#", class: "category__search search__btn" do
-              %i.fas.fa-bars.category__top__icon
-                カテゴリー
+              カテゴリー
             %ul.category__parent.category__list
               - @parents.each do |parent| 
                 %li

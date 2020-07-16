@@ -1,0 +1,42 @@
+.selling-header
+  .selling-header__center
+    .selling-header__center__logo
+      = link_to image_tag('logo/logo.png', alt: "FURIMA", width: '200'), root_path
+.selling-body
+  .purchase
+    .purchase__section
+      %h2.purchase__section__head
+        購入内容の確認
+      .purchase__section__image
+        = image_tag @item.images.first.image.url, alt: '商品画像', size: '150x150'
+      .purchase__section__item-name
+        = @item.name
+      .purchase__section__price
+        = "¥ #{@item.price} 円(税込)"
+      .purchase__section__burden
+        = @item.delivery_burden
+      .purchase__section__pay
+        支払い方法
+      .purchase__section__credit
+        - if @default_card_information.blank?
+          %br /
+        - else
+          クレジットカード
+          .purchase__section__credit--number
+            = "**** **** **** " + @default_card_information.last4
+          .purchase__section__credit--expire
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = "有効期限 " + exp_month + " / " + exp_year
+        %br
+      .purchase__section__delivery
+        配送先
+      .purchase__section__post
+        = "〒 #{current_user.post.to_s.insert(3, "-")}"
+      .purchase__section__addres
+        = "#{current_user.prefecture}#{current_user.city}#{current_user.block}#{current_user.building}"
+      .purchase__section__name
+        = "#{current_user.send_last_name}" + " " + "#{current_user.send_first_name}"
+      .purchase__section__btn
+        = button_to '購入する', item_pay_path, { method: :pay, name: "sell_or_sold", value: "Sold", class: "submit-btn"}
+.selling-footer
