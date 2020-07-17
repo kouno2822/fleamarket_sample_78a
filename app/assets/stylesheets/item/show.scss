@@ -1,0 +1,104 @@
+.main {
+  background: #f8f8f8;
+  &__showMain{
+    padding: 40px;
+    margin: 0 auto;
+      &__contentRight {
+        width: 700px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 25px 40px 40px;
+        &__topContent {
+          &__itemBox {
+            &__name {
+              text-align: center;
+              margin: 0;
+            }
+            &__body {
+              width: 560px;
+              margin: 0 auto;
+            }
+            &__price {
+              font-size: 46px;
+              font-weight: bold;
+              text-align: center;
+            }
+            &__priced {
+              text-align: center;
+            }
+          }
+          &__temDetail {
+            margin: 30px 0px;
+            font-size: 18px;
+          }
+          &__table {
+            width: 700px;
+            margin: 0 auto;
+            border-collapse: collapse ;
+            &__tablebody {
+              border-collapse:collapse;	
+              &__title {
+                background-color: #EEEEEE;
+                width: 20%;
+                border: 1px solid #dedede;
+                padding: 8px;
+                margin: 0;
+                font-size: 14px;
+                font-weight: normal;
+              }
+              &__comment {
+                border: 1px solid #dedede;
+                width: 80%;
+                padding: 15px;
+              }
+            }
+          }
+        }
+     }
+  }
+}
+
+.image-file {
+  width: 560px;
+}
+.image-low {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.btn-default {
+  color:white;
+  width:100%;
+  height:60px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-blue{
+  background-color: rgb(4, 197, 245);
+}
+.btn-red{
+  background-color: rgb(255, 38, 0);
+}
+
+.product-listing__purchase-btn{
+  background-color: #3CCACE;
+  color:white;
+  width:100%;
+  height:60px;
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.category, .prefecture{
+  color: #3CCACE;
+} 
