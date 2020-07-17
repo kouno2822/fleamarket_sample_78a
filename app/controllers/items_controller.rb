@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, except: [:index, :show, :destroy]
   before_action :set_item, only: [:show, :edit, :destroy]
+  before_action :set_parent, only: :index
 
   def index
-    @parents = Category.where(ancestry: nil)
     @sell_items = Item.where(sell_or_sold: '出品中').order(created_at: :desc).limit(4)
     @random_items = Item.where(sell_or_sold: '出品中').order("RAND()").limit(4)
   end

@@ -6,9 +6,10 @@
   
   .index {
     width: 700px;
-    background-color: white;
+    background-color: #EEEEEE;
     margin: 30px 0 100px;
 
+    
     &__title {
       height: 55px;
       width: 700px;
@@ -22,16 +23,35 @@
       line-height: 55px;
     }
     
-    &__image {
+    &__item {
+      background-color: #EEEEEE;
+      display: flex;
+      overflow: auto;
 
-    }
-    
-    &__name {
-
-    }
-
-    &__price {
-
+      &__content {
+        background-color: white;
+        margin: 6px;
+        
+        &--image {
+          height: 200px;
+          object-fit: contain;
+        }
+        
+        &--name {
+          height: 40px;
+          margin-left: 10px;
+          word-wrap: break-word;
+        }
+        
+        &--price {
+          margin-left: 10px;
+        }
+        
+        &--tax {
+          margin-left: 10px;
+          font-size: small;
+        }
+      }
     }
   }
 }
