@@ -19,7 +19,6 @@ $sidebar_fontcolor: rgb(80, 80, 80);
   background-color: rgb(243, 243, 243);
   width: 100vw;
   &__left{
-    width: 20vw;
     padding: 65px 10px 50px 150px ;
     &__sell_title{
       font-size: 22px;
@@ -66,7 +65,6 @@ $sidebar_fontcolor: rgb(80, 80, 80);
   &__right{
     width: 70vw;
     margin: 50px 0 100px 10px;
-    padding-right: 150px;
     &__title{
       font-size: 20px;
       height: 10%;
