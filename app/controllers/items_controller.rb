@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :move_to_login, except: :index
+  before_action :move_to_login, except: [:index, :show]
+  before_action :set_item, only: [:show, :edit, :destroy]
+  before_action :set_parent, only: [:index, :show]
 
   def index
-    @parents = Category.where(ancestry: nil)
     @sell_items = Item.where(sell_or_sold: '出品中').order(created_at: :desc).limit(4)
     @random_items = Item.where(sell_or_sold: '出品中').order("RAND()").limit(4)
   end
@@ -11,6 +12,18 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     @category_parent_array = Category.where(ancestry: nil)
+  end
+
+  def destroy
+    unless @item.seller_id == current_user.id && @item.destroy
+      redirect_to  item_path(@item)
+    end
+  end
+
+  def show
+    @item_category_grandchild = Category.find(@item.category_id)
+    @item_category_child = @item_category_grandchild.parent
+    @item_category_parent = @item_category_child.parent
   end
 
   def create
@@ -34,6 +47,10 @@ class ItemsController < ApplicationController
 
   private
   
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def move_to_login
     redirect_to "/users/sign_in", notice: 'ログインするとご利用いただけます。' unless user_signed_in?
   end
