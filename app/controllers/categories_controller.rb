@@ -2,6 +2,9 @@ class CategoriesController < ApplicationController
   before_action :set_one_category, only: [:parent, :child, :grandchild]
   before_action :set_parent
 
+  def index
+  end
+  
   def parent
     #親要素の子要素代入
     children = @category.children
