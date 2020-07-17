@@ -90,7 +90,7 @@ body {
       &__listsRight {
         position: absolute; right:0px;
         padding-left: 0;
-        margin-top: 8px;
+        margin-top: 20px;
         &__login {
           color: #333333;
           padding-left: 15px;
@@ -103,13 +103,13 @@ body {
     }
   }
 }
-.navi__branded, .navi__listsRight__login, .navi__listsRight__signUp {
-  font-size: 14px;
-}
 .category__child, .category__parent, .category__grandchild{
   display: none;
 }
 
+.navi__branded, .navi__listsRight__login, .navi__listsRight__signUp {
+  font-size: 14px;
+}
 
 // カテゴリーの大枠の要素の共通項
 .category__list{

@@ -1,6 +1,4 @@
 // @import "reset";
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import "user/login";
 @import "user/signup";
 @import "user/show";
@@ -8,7 +6,5 @@
 @import "user/credit";
 @import "items";
 @import "item/new";
-@import "card/new";
-@import "card/show";
-@import "purchase/check";
-@import "purchase/done";
+@import "item/show";
+@import "item/destroy"
