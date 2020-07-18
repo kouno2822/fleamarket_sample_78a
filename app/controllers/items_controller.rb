@@ -36,11 +36,29 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    if current_user.id == Item.find(params[:id]).seller_id
+      @item = Item.find(params[:id])
+      set_categories
+      @images = @item.images
+    else
+      redirect_to root_path
+    end
   end
-
+  
   def update
-    
+    @item = Item.find(params[:id])
+    # binding.pry
+    if @item.update(item_params)
+      redirect_to users_show_path
+    else
+      set_categories
+      @images = @item.images
+      # render :edit
+      # redirect_to teaser_path, flash: { error: @pre_regist.errors.full_messages }
+      redirect_to  edit_item_path(@item), flash: { error: @item.errors.full_messages }
+      # binding.pry
+    end
+
   end
   
   # 親カテゴリーが選択された後に動くアクション
@@ -65,6 +83,12 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :brand, :explanation, :status, :sell_or_sold, :delivery_burden,
-       :prefecture_id, :delivery_day, :price, :seller_id, :buyer_id, :category_id, images_attributes: [:image])
+       :prefecture_id, :delivery_day, :price, :seller_id, :buyer_id, :category_id, images_attributes: [:image, :_destroy, :id])
+  end
+
+  def set_categories
+    @item_category_grandchild = Category.find(@item.category_id)
+    @item_category_child = @item_category_grandchild.parent
+    @item_category_parent = @item_category_child.parent
   end
 end
