@@ -126,5 +126,11 @@ describe Item do
       expect(item.errors[:price]).to include()
     end
 
+    it "カテゴリーIDが親のIDでは出品できない" do
+      item = build(:item, category_id: '1')
+      item.valid?
+      expect(item.errors[:category_id]).to include("を選択してください")
+    end
+
   end
 end
