@@ -2,20 +2,25 @@
   = render partial: '/items/header-login' 
 -else
   = render partial: '/items/header-logout' 
+- breadcrumb :child
+= render "layouts/breadcrumbs"
 
 .center
   .index
     .index__title
       = "#{@category.name}の商品一覧"
+    .index__list
+      - @category.children.each do |child|
+        = link_to child.name, child_category_path(child), class: "index__list--link"
     .index__item
       - @items.each do |item|
         .index__item__content
-          = image_tag item.images.first.image.url, width: "220", class: "index__item__content--image"
+          = link_to image_tag(item.images.first.image.url, width: "220", class: "index__item__content--image"), item_path(item)
           .index__item__content--name
             = item.name
           .index__item__content--price
             = "¥ #{item.price} 円"
           .index__item__content--tax
             = "(税込)"
-
+= render partial: '/items/banner'
 = render partial: '/items/footer'

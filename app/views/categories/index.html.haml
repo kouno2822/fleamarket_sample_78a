@@ -2,7 +2,8 @@
   = render partial: '/items/header-login' 
 -else
   = render partial: '/items/header-logout' 
-= breadcrumb :categories
+- breadcrumb :categories
+= render "layouts/breadcrumbs"
 .center
   .category__container
     .category__container--title
@@ -24,4 +25,5 @@
                   = link_to "#{grandchild.name}", grandchild_category_path(grandchild.id)
       .to-top
         トップへ戻る
+= render partial: '/items/banner'
 = render partial: '/items/footer'

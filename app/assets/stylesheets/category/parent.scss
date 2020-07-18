@@ -23,10 +23,27 @@
       line-height: 55px;
     }   
     
+    &__list {
+      background-color: white;
+      padding-left: 40px;
+
+      &--link {
+        height: 25px;
+        width: 300px;
+        color: #FFCC00;
+        margin: 5px 0;
+        display: inline-block;
+      }
+      &--link:hover {
+        text-decoration: underline;
+      }
+    }
+
     &__item {
       background-color: #EEEEEE;
       display: flex;
-      overflow: auto;
+      flex-wrap: wrap;
+
 
       &__content {
         background-color: white;

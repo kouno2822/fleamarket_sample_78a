@@ -143,6 +143,10 @@ body {
         font-size: 13px;
         letter-spacing: 2px;
       }
+      &--name:hover {
+        color: #FFCC00;
+        text-decoration: underline;
+      }
       li {
         &:hover{
           .category__child{
@@ -150,6 +154,10 @@ body {
             display: block;
             top: 0;
             left: 221px;
+          &--name:hover {
+            color: #FFCC00;
+            text-decoration: underline;
+              }
             li {
               &:hover{
                 .category__grandchild{
