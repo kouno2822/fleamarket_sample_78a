@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'items#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/sessions'   
+    sessions: 'users/sessions'
   } 
   get 'users/show', to: 'users#show'
   get 'users/logout', to: 'users#logout'

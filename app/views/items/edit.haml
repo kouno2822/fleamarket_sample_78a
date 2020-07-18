@@ -6,16 +6,37 @@
   .edit-body__form
     = form_with model: @item, local: true do |f|
       = render partial: "error_messages"
+      -if flash[:error].present?
+        #error_explanation-text
+          必須項目を入力してください
+        - flash[:error].each do |e|
+          #error_explanation
+            = e
       .edit-body__form__text
         商品情報編集
       .edit-body__form__field
         .character
           出品画像
           %span.must 必須
-        .edit-body__form__field__image
-          = f.fields_for :images do |i|
-            = i.file_field :image, class: "image-file"
-            %br/
+        .edit-body__form__field-box
+          .prev
+            - @item.images.each do |image|
+              .prev-box
+                .prev-box-top
+                  = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                .prev-box-bottom
+                  .prev-box-bottom-delete 削除
+          .label
+            = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+
+          .hidden
+            = f.fields_for :images do |i|
+              = i.file_field :image, class: "hidden-field"
+              = i.check_box :_destroy, class: "hidden-checkbox"
+
+            - @item.images.length.upto(4) do |i|
+              %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
       .edit-body__form__field
         .character
           商品名
@@ -30,12 +51,16 @@
         %br/
       .h-character
         商品の詳細
-      .edit-body__form__field
+      .selling-body__form__field
         .character
           カテゴリー
           %span.must 必須
-        .edit-body__form__field__category
+        .selling-body__form__field__category
           = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {id: 'parent_category'}
+        .selling-body__form__field__category#child_wrapper
+          = f.collection_select :category_id, Category.where(ancestry: @item_category_child.ancestry), :id, :name, {prompt: '選択してください'}, {id: 'child_category'}
+        .selling-body__form__field__category#grandchild_wrapper
+          = f.collection_select :category_id, Category.where(ancestry: @item_category_grandchild.ancestry), :id, :name, {prompt: '選択してください'}, {id: 'grandchild_category'}
       .edit-body__form__field
         .character
           ブランド
@@ -92,6 +117,7 @@
         .sale-profit
           \---
       .edit-body__form__btn-area
-        = f.submit "出品する", class: "submit-btn"
+        = f.submit "更新する", class: "submit-btn"
       = f.hidden_field :user_id, value: current_user.id
 .edit-footer
+

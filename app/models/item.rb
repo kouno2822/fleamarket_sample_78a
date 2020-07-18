@@ -23,6 +23,6 @@ class Item < ApplicationRecord
   validates :price, presence: true, inclusion: {in: 300..9999999 }
   validates :seller_id, presence: true
   validates :buyer_id, allow_blank: true, numericality: {only_integer: true}
-  validates :category_id, presence: true
+  validates :category_id, presence: true, exclusion: { in: [0, 1, 200, 346, 481, 625, 685, 798, 898, 984],message: "を選択してください" }
 
 end
