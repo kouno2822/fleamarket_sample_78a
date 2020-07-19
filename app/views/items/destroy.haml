@@ -1,14 +1,5 @@
-%header
--if user_signed_in?
-  = render partial: 'header-login' 
--else
-  = render partial: 'header-logout' 
-
 .contents
-  .contents__success
+  .success
     %h3
       削除が完了しました。
-    = link_to 'マイページに戻る', users_show_path, class:"contents__success__top"
-
-%footer
-  = render partial: 'footer'
+    = link_to 'トップページに戻る', items_path 
