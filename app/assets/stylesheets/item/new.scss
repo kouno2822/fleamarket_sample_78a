@@ -33,6 +33,7 @@
         margin-bottom: 60px;
 
         .item-image {
+          object-fit: contain;
           margin-right: 5px;
 
           .image-remove {

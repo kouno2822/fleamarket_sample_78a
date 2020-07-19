@@ -1,0 +1,73 @@
+.center {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  
+  .index {
+    width: 700px;
+    background-color: #EEEEEE;
+    margin: 30px 0 100px;
+    
+    &__title {
+      height: 55px;
+      width: 700px;
+      background-color: #33CCCC;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+      line-height: 55px;
+    }   
+    
+    &__list {
+      background-color: white;
+      padding-left: 40px;
+
+      &--link {
+        height: 25px;
+        width: 300px;
+        color: #FFCC00;
+        margin: 5px 0;
+        display: inline-block;
+      }
+      &--link:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__item {
+      background-color: #EEEEEE;
+      display: flex;
+      flex-wrap: wrap;
+
+
+      &__content {
+        background-color: white;
+        margin: 6px;
+        
+        &--image {
+          height: 200px;
+          object-fit: contain;
+        }
+        
+        &--name {
+          height: 40px;
+          margin-left: 10px;
+          word-wrap: break-word;
+        }
+        
+        &--price {
+          margin-left: 10px;
+        }
+        
+        &--tax {
+          margin-left: 10px;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
