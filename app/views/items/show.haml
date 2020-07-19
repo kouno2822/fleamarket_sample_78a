@@ -25,18 +25,17 @@
             = @item.delivery_burden
 
         - if user_signed_in?
-          - if current_user.id == @item.seller_id
+          - if @item.sell_or_sold == "Sold"
+            .product-listing__purchase-btn__sold 売り切れ
+          - elsif current_user.id == @item.seller_id
             .listing-item-change-box
-              = link_to edit_item_path(@item.id) do
-                %button.btn-default.btn-blue{type: "submit"} 商品の編集
-              = link_to item_path(@item.id), method: :delete do
-                %button.btn-default.btn-red{type: "submit"} この商品を削除する
+              = link_to "商品の編集", edit_item_path(@item.id), class:"btn-default__btn-blue"
+              = link_to "この商品を削除する", item_path(@item.id), class:"btn-default__btn-red"
           - else
-            = link_to item_check_path(@item) do
-              %input.product-listing__purchase-btn{type:"submit", value:"購入画面に進む"}/
+            = link_to "購入画面に進む", item_check_path, class:"product-listing__purchase-btn"
+
         - else
-          = link_to user_session_path do
-            %input.product-listing__purchase-btn{type:"submit", value:"購入画面に進むログイン"}/
+          = link_to "購入画面に進むログイン", user_session_path, class:"product-listing__purchase-btn"
 
         .main__showMain__contentRight__topContent__temDetail
           = @item.explanation
