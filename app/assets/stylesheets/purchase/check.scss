@@ -13,6 +13,15 @@
       border-bottom: 1px solid #EEEEEE;
     }
 
+    &__image {
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    &__item-name {
+      word-wrap: break-word;
+    }
+    
     &__price {
       font-size: large;
       font-weight: bold;
