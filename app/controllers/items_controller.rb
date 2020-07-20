@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
 
   def edit
     if current_user.id == Item.find(params[:id]).seller_id
-      @item = Item.find(params[:id])
+      set_item
       set_categories
       @images = @item.images
     else
@@ -46,17 +46,13 @@ class ItemsController < ApplicationController
   end
   
   def update
-    @item = Item.find(params[:id])
-    # binding.pry
+    set_item
     if @item.update(item_params)
       redirect_to users_show_path
     else
       set_categories
       @images = @item.images
-      # render :edit
-      # redirect_to teaser_path, flash: { error: @pre_regist.errors.full_messages }
       redirect_to  edit_item_path(@item), flash: { error: @item.errors.full_messages }
-      # binding.pry
     end
 
   end
@@ -84,6 +80,10 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :brand, :explanation, :status, :sell_or_sold, :delivery_burden,
        :prefecture_id, :delivery_day, :price, :seller_id, :buyer_id, :category_id, images_attributes: [:image, :_destroy, :id])
+  end
+
+  def det_item
+    @item = Item.find(params[:id])
   end
 
   def set_categories
