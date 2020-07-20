@@ -9,9 +9,27 @@
         %button.header__top__main__searchBox__button{ type: "submit"}
           .header__top__main__searchBox__button__search
             = image_tag 'icon-search 1.png', class: 'header__top__main__searchBox__button__search'
-    .header__top__navi
-      %ul.header__top__navi__listsLeft
-        %a#catBtn.header__top__navi__listsLeft__categori{ href: "#"} カテゴリー
-        %a#catBtn.header__top__navi__listsLeft__branded{ href: "#"} ブランド
-      %ul.header__top__navi__listsRight
-        %a.header__top__navi__listsRight__login{ href: "/users/show"} マイページ
+    .navi
+      .categories
+        %ul.categories__top
+          %li
+            = link_to categories_path, class: "category__search search__btn" do
+              カテゴリー
+            %ul.category__parent.category__list
+              - @parents.each do |parent| 
+                %li
+                  = link_to parent_category_path(parent), class: "category__parent--name" do
+                    = parent.name
+                  %ul.category__child.category__list
+                    - parent.children.each do |child|
+                      %li
+                        = link_to child_category_path(child), class: "category__child--name" do
+                          = child.name
+                        %ul.category__grandchild.category__list
+                          - child.children.each do |grandchild|
+                            %li
+                              = link_to grandchild_category_path(grandchild), class: " category__child--name" do
+                                = grandchild.name 
+      %a#catBtn.navi__branded{ href: "#"} ブランド
+      %ul.navi__listsRight
+        %a.navi__listsRight__login{ href: "/users/show"} マイページ
