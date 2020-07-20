@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if current_user.id == Item.find(params[:id]).seller_id
+    if current_user.id == @item.seller_id
       @images = @item.images
     else
       redirect_to root_path
