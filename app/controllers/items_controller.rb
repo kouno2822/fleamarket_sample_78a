@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :destroy]
-  before_action :set_parent, only: [:index, :show]
+  before_action :set_item, only: [:show, :edit, :destroy, :update]
+  before_action :set_categories, only: [:show, :edit, :update]
 
   def index
     @sell_items = Item.where(sell_or_sold: '出品中').order(created_at: :desc).limit(4)
@@ -21,9 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item_category_grandchild = Category.find(@item.category_id)
-    @item_category_child = @item_category_grandchild.parent
-    @item_category_parent = @item_category_child.parent
   end
 
   def create
@@ -37,8 +34,6 @@ class ItemsController < ApplicationController
 
   def edit
     if current_user.id == Item.find(params[:id]).seller_id
-      @item = Item.find(params[:id])
-      set_categories
       @images = @item.images
     else
       redirect_to root_path
@@ -46,17 +41,11 @@ class ItemsController < ApplicationController
   end
   
   def update
-    @item = Item.find(params[:id])
-    # binding.pry
     if @item.update(item_params)
       redirect_to users_show_path
     else
-      set_categories
       @images = @item.images
-      # render :edit
-      # redirect_to teaser_path, flash: { error: @pre_regist.errors.full_messages }
       redirect_to  edit_item_path(@item), flash: { error: @item.errors.full_messages }
-      # binding.pry
     end
 
   end
