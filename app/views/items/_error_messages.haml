@@ -1,7 +1,7 @@
-- if @item.errors.any?
+- if flash[:error].present?
   #error_explanation
     %h2
       必須項目を入力してください
     %ul
-      - @item.errors.full_messages.each do |message|
+      - flash[:error].each do |message|
         %li= message

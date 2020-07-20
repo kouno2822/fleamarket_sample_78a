@@ -1,13 +1,24 @@
 $border_color: rgb(216, 216, 216);
 $sidebar_fontcolor: rgb(80, 80, 80);
+@mixin box{
+  border: solid 1px $border_color;
+  height: 50px;
+  width: 13vw;
+  min-width: 100px;
+  line-height: 50px;
+  padding-left: 10px;
+  font-size: 18px;
+  background-color: #fff;
+  display: block;
+  text-decoration: none;
+  color: $sidebar_fontcolor;
+}
 
 .Main{
   display: flex;
   background-color: rgb(243, 243, 243);
-  height: 100vh;
   width: 100vw;
   &__left{
-    width: 20vw;
     padding: 65px 10px 50px 150px ;
     &__sell_title{
       font-size: 22px;
@@ -17,28 +28,10 @@ $sidebar_fontcolor: rgb(80, 80, 80);
       color: #000;
     }
     &__sell_do{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__sell_index{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__buy_title{
       margin-top: 60px;
@@ -49,16 +42,7 @@ $sidebar_fontcolor: rgb(80, 80, 80);
       color: #000;
     }
     &__buy_index{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__config_title{
       margin-top: 60px;
@@ -69,46 +53,18 @@ $sidebar_fontcolor: rgb(80, 80, 80);
       color: #000;
     }
     &__config_user{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__config_credit{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
     &__config_logout{
-      border: solid 1px $border_color;
-      height: 50px;
-      width: 200px;
-      line-height: 50px;
-      padding-left: 10px;
-      font-size: 18px;
-      background-color: #fff;
-      display: block;
-      text-decoration: none;
-      color: $sidebar_fontcolor;
+      @include box;
     }
   }
   &__right{
     width: 70vw;
     margin: 50px 0 100px 10px;
-    padding-right: 150px;
     &__title{
       font-size: 20px;
       height: 10%;
@@ -164,10 +120,10 @@ $sidebar_fontcolor: rgb(80, 80, 80);
     }
     &__buy_index{
       border: solid 1px $border_color;
-      height: 35%;
-      margin-top: 100px;
+      height: 200px;
+      margin-top: 60px;
       &-title{
-        height: 15%;
+        height: 30px;
         padding-left: 10px;
         line-height: 200%;
         display: block;
@@ -177,8 +133,37 @@ $sidebar_fontcolor: rgb(80, 80, 80);
         font-weight: bold;
       }
       &-display{
-        height: 85%;
-        background-color: #fff;
+        background: #fff;
+        display: flex;
+        overflow: auto;
+        &__items{
+          &-top{
+            &-image{
+              width: 220px;
+              height: 150px;
+              object-fit: cover;
+            }
+          }
+          &-bottom{
+            color: #333;
+            padding: 16px;
+            &-name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+              margin: 0;
+              font-weight: normal;
+            }
+            &-price{
+              font-size: 16px;
+              margin-top: 5px;
+            }
+            &-tax{
+              font-size: 10px;
+            }
+          }
+        }
       }
     }
   }

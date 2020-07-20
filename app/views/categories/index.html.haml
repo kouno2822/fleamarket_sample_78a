@@ -1,0 +1,29 @@
+-if user_signed_in?
+  = render partial: '/items/header-login' 
+-else
+  = render partial: '/items/header-logout' 
+- breadcrumb :categories
+= render "layouts/breadcrumbs"
+.center
+  .category__container
+    .category__container--title
+      カテゴリー 一覧
+    .category__container--top
+      - @parents.each_with_index do |parent, i|
+        = link_to "#{parent.name}", "##{i}", class: "parent-link"
+    - @parents.each_with_index do |parent, i|
+      .category__container--box
+        .category__container--box--title{id: "#{i}"}
+          = parent.name
+        .category__box--child
+          - parent.children.each do |child|
+            .category__box--child--name
+              = link_to "#{child.name}", child_category_path(child.id)
+            .category__box--grandchild
+              - child.children.each do |grandchild|
+                .category__box--grandchild--name
+                  = link_to "#{grandchild.name}", grandchild_category_path(grandchild.id)
+      .to-top
+        トップへ戻る
+= render partial: '/items/banner'
+= render partial: '/items/footer'

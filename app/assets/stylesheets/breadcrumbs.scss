@@ -1,0 +1,14 @@
+.breadcrumbs {
+  height: 50px;
+  padding-left: 100px;
+  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #C0C0C0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+
+  .current {
+    font-weight: bold;
+  }
+}
