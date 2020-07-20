@@ -1,0 +1,38 @@
+.Main{
+  display: flex;
+  &__left{
+    border: solid 1px rgb(231, 231, 231);
+    width: 25vw;
+    padding: 50px 60px ;
+    &__sell{
+      margin-bottom: 30px;
+      &-do{
+        border: solid 1px rgb(231, 231, 231);
+        width: 150px;
+      }
+      &-index{
+        border: solid 1px rgb(231, 231, 231);
+      }
+    }
+    &__buy{
+      margin-bottom: 30px;
+      &-index{
+        border: solid 1px rgb(231, 231, 231);
+      }
+    }
+    &__config{
+      &-user{
+        border: solid 1px rgb(231, 231, 231);
+      }
+      &-credit{
+        border: solid 1px rgb(231, 231, 231);
+      }
+      &-logout{
+        border: solid 1px rgb(231, 231, 231);
+      }
+    }
+  }
+  &__right{
+    width: 75vw;
+  }
+}
