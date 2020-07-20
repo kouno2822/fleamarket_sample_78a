@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_login, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :destroy, :update]
   before_action :set_categories, only: [:show, :edit, :update]
+  before_action :set_parent
 
   def index
     @sell_items = Item.where(sell_or_sold: '出品中').order(created_at: :desc).limit(4)
