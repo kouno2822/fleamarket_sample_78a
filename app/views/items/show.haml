@@ -32,7 +32,7 @@
               = link_to "商品の編集", edit_item_path(@item.id), class:"btn-default__btn-blue"
               = link_to "この商品を削除する", item_path(@item.id), method: :delete, class:"btn-default__btn-red"
           - else
-            = link_to "購入画面に進む", item_check_path, class:"product-listing__purchase-btn"
+            = link_to "購入画面に進む", item_check_path(@item.id), class:"product-listing__purchase-btn"
         - else
           = link_to "購入画面に進むログイン", user_session_path, class:"product-listing__purchase-btn"
 
