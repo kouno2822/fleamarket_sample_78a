@@ -89,3 +89,4 @@
 |card_id|integer|null: false|
 ### Association
 - belongs_to :user
+

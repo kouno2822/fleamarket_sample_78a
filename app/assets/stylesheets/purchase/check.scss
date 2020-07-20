@@ -1,0 +1,87 @@
+.purchase {
+  width: 600px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+
+  &__section {
+
+    &__head {
+      height: 70px;
+      text-align: center;
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    &__image {
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    &__item-name {
+      word-wrap: break-word;
+    }
+    
+    &__price {
+      font-size: large;
+      font-weight: bold;
+    }
+
+    &__burden {
+      height: 50px;
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    &__pay {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 20px 0 15px;
+    }
+
+    &__credit {
+      height: 100px;
+      font-size: 15px;
+      border-bottom: 1px solid #EEEEEE;
+
+      &--number {
+        margin-top: 10px;
+      }
+    }
+
+    &__delivery {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 20px 0 15px;
+    }
+
+    &__post {
+      font-size: 15px;
+    }
+
+    &__addres {
+      font-size: 15px;
+    }
+
+    &__name {
+      height: 50px;
+      font-size: 15px;
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    &__btn {
+      margin: 20px 0 50px;
+
+      .submit-btn {
+        height: 50px;
+        width: 300px;
+        background-color: #33CCCC;
+        color: white;
+        font-weight: bold;
+        font-size: medium;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
