@@ -8,6 +8,11 @@
 
     &__section {
 
+      &__image {
+        max-height: 200px;
+        object-fit: contain;
+      }
+
       .mypage-btn {
         display: inline-block;
         text-align: center;

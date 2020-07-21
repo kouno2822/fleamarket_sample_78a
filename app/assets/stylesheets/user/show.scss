@@ -93,7 +93,7 @@ $sidebar_fontcolor: rgb(80, 80, 80);
             &-image{
               width: 220px;
               height: 150px;
-              object-fit: cover;
+              object-fit: contain;
             }
           }
           &-bottom{
@@ -141,7 +141,7 @@ $sidebar_fontcolor: rgb(80, 80, 80);
             &-image{
               width: 220px;
               height: 150px;
-              object-fit: cover;
+              object-fit: contain;
             }
           }
           &-bottom{

@@ -60,11 +60,12 @@
 
 .image-file {
   width: 560px;
+  object-fit: contain;
 }
 .image-low {
   width: 140px;
   height: 90px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .btn-default {

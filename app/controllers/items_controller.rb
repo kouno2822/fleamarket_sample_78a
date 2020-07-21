@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :destroy, :update]
+  before_action :set_item, only: [:show, :edit, :destroy, :update, :done]
   before_action :set_categories, only: [:show, :edit, :update]
   before_action :set_parent
 
@@ -27,9 +27,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to "/users/show"
+      redirect_to done_item_path(@item)
     else
-      redirect_to "/items/new", flash: { error: @item.errors.full_messages }
+      redirect_to new_item_path, flash: { error: @item.errors.full_messages }
     end
   end
 
@@ -48,9 +48,11 @@ class ItemsController < ApplicationController
       @images = @item.images
       redirect_to  edit_item_path(@item), flash: { error: @item.errors.full_messages }
     end
-
   end
   
+  def done
+  end
+
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
