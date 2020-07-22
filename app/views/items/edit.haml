@@ -5,7 +5,6 @@
 .edit-body
   .edit-body__form
     = form_with model: @item, local: true do |f|
-      = render partial: "error_messages"
       -if flash[:error].present?
         #error_explanation-text
           必須項目を入力してください
